@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nb.robot.demoapplication.fragment.ExpressionFragment">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dip"
+        android:stretchColumns="*">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_staticEmotion"
+            android:hint="静态表情"
+            android:inputType="numberDecimal"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="5dip"
+            />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_dynEmotion"
+                android:hint="动态表情"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="5dip"
+                />
+            <EditText
+                android:id="@+id/et_emotionDuration"
+                android:hint="持续时间"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="5dip"
+                />
+            <EditText
+                android:id="@+id/et_emotionRepeat"
+                android:hint="重复次数"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:padding="5dip"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_first"
+                android:text="1-吃惊"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_two"
+                android:text="2-大笑"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_three"
+                android:text="3-道别"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_four"
+                android:text="4-害羞"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_five"
+                android:text="5-微笑"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_six"
+                android:text="6-汗"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_seven"
+                android:text="7-疑问"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_eight"
+                android:padding="5dip"
+                android:layout_weight="1"
+                android:text="8-赞" />
+
+            <TextView
+                android:id="@+id/tv_nine"
+                android:text="9-无表情"
+                android:padding="5dip"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_emotion"
+                android:text="控制表情显示"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        </TableLayout>
+</LinearLayout>

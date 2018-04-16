@@ -1,0 +1,46 @@
+﻿#BNF+IAT 1.0 UTF-8;
+!grammar demoApp;
+
+!slot <dot>;
+!slot <ten>;
+!slot <hundred>;
+!slot <thousand>;
+!slot <wan>;
+!slot <num>;
+
+!slot <robotName>;
+!slot <hello>;
+!slot <eat>;
+!slot <weather>;
+
+!start <Start>;
+<Start>: <banks> | <entertainments> | <operations>;
+
+<banks>:<bankService> | <balance> | <transactionHistory>;
+
+<bankService>:<bank><service>;
+<bank>:银行;
+<service>:业务;
+
+<balance>:余额;
+
+<transactionHistory>:<transaction><history>;
+<transaction>:交易;
+<history>:记录;
+
+<entertainments>:<entertainmentMode> | <dance> | <smile>;
+
+<entertainmentMode>:<entertainment><mode>;
+<entertainment>:娱乐;
+<mode>:模式;
+
+<dance>:跳[个]舞[吧];
+
+<smile>:笑[一][个|下][吧];
+
+<operations>:<returnMainmenu>;
+
+<returnMainmenu>:<return><mainmenu>;
+<return>:返回;
+<mainmenu>:主界面;
+

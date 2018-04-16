@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nb.robot.demoapplication.fragment.MotionControlFragment">
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/intr"
+                    android:text="底盘控制"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/motion_lineSpeed"
+                    android:hint="线速度"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/motion_angularSpeed"
+                    android:hint="角速度"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/motion_duration"
+                    android:hint="时间"
+                    android:layout_weight="1"/>
+                <EditText
+                    android:id="@+id/et_led"
+                    android:hint="呼吸灯"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/button_motion"
+                    android:text="底盘运动"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/button_reset"
+                    android:text="底盘重置"
+                    android:layout_weight="1" />
+                <Button
+                    android:id="@+id/button_led"
+                    android:text="呼吸灯"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:text="底盘的X,Y,Th值"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:gravity="center" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_XYTH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="123145"/>
+
+</LinearLayout>

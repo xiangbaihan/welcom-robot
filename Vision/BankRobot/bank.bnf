@@ -1,0 +1,40 @@
+﻿#BNF+IAT 1.0 UTF-8;
+!grammar bank;
+
+!slot <dot>;
+!slot <ten>;
+!slot <hundred>;
+!slot <thousand>;
+!slot <wan>;
+!slot <num>;
+
+!slot <robotName>;
+!slot <hello>;
+!slot <eat>;
+!slot <weather>;
+
+!start <Start>;
+<Start>: <digits> | <greetings>;
+
+<digits>:[<num>][<thousand>][<num>][<hundred>][<num>][<ten>][<num>][<wan>][<num>][<thousand>][<num>][<hundred>][<num>][<ten>]<num>[<dot>][<num>][<num>];
+<dot>:点;
+<ten>:十;
+<hundred>:百;
+<thousand>:千;
+<wan>:万;
+<num>:零|一|二|三|四|五|六|七|八|九|两;
+
+<greetings>:<helloGreeting> | <eatGreeting> | <weatherGreeting>;
+
+<helloGreeting>:<hello>[<robotName>];
+<hello>:你好|hello|hi|hey;
+<robotName>:小白;
+
+<eatGreeting>:[<robotName>][<today>]<eat>[<eatSuffix>][<robotName>];
+<today>:今天;
+<eat>:吃|吃饭;
+<eatSuffix>:了|了吗;
+
+<weatherGreeting>:[<robotName>][<today>]<weather>[<how>][<robotName>];
+<weather>:天气;
+<how>:好吗|怎么|怎么样|如何;

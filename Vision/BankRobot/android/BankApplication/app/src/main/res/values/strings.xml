@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BankApplication</string>
+    <string name="dummy_content">Bank Robot</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="title_activity_login">登录</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_phone">帐号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_phone">电话号码格式不正确</string>
+    <string name="error_incorrect_password">密码不正确</string>
+    <string name="error_field_required">此项不能为空</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="title_activity_entertainment">EntertainmentActivity</string>
+
+    <string name="title_activity_bank_service">BankServiceActivity</string>local_service_stopped
+    <string name="local_service_started">Local service has started</string>
+    <string name="local_service_stopped">Local service has stopped</string>
+    <string name="local_service_label">Sample Local Service</string>
+
+    <string name="bank_balance_text"> 帐号168的余额是 8888元\n帐号188的余额是 6666元</string>
+    <string name="bank_transaction_text">2017年6月6日，帐号168，存入100元，余额1000元\n2017年7月7日，帐号188，存入100元，余额9999元\n2017年8月8日，帐号168，存入800元，余额8800元
+    </string>
+
+    <string name="speech_unrecognized">无法识别您的语音，请再说一遍</string>
+</resources>

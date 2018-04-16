@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.nb.robot.bankapplication.EntertainmentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewWelcomeEntertainment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="欢迎进入娱乐模式"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textViewEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonDance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="挑个舞吧" />
+
+        <Button
+            android:id="@+id/buttonSmile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="笑一下～" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonBackMain_Ent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="返回主菜单" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

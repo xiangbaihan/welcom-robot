@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nb.robot.demoapplication.fragment.InitFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/intr"
+                    android:text="初始化操作"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/moudle_stop"
+                    android:text="Stop Moudle"
+                    android:layout_weight="1" />
+                <Button
+                    android:id="@+id/moudle_start"
+                    android:text="Start Moudle"
+                    android:layout_weight="1" />
+                <Button
+                    android:id="@+id/server_Connect"
+                    android:text="Connect"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/info"
+                    android:text=""
+                    android:layout_weight="1" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

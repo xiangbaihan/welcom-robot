@@ -1,0 +1,39 @@
+﻿#BNF+IAT 1.0 UTF-8;
+!grammar bank;
+
+!slot <dot>;
+!slot <ten>;
+!slot <hundred>;
+!slot <thousand>;
+!slot <wan>;
+!slot <num>;
+
+!slot <robotName>;
+!slot <hello>;
+!slot <sing>;
+
+!start <Start>;
+<Start>: <digits> | <greetings>;
+
+<digits>:[<num>][<thousand>][<num>][<hundred>][<num>][<ten>][<num>][<wan>][<num>][<thousand>][<num>][<hundred>][<num>][<ten>]<num>[<dot>][<num>][<num>];
+<dot>:点;
+<ten>:十;
+<hundred>:百;
+<thousand>:千;
+<wan>:万;
+<num>:零|一|二|三|四|五|六|七|八|九|两;
+
+<greetings>:<helloGreeting>| <sportGreeting>| <weatherGreeting> ;
+
+<helloGreeting>:<hello>[<robotName>];
+<hello>:你好|hello|hi|hey;
+<robotName>:大黑;
+
+<sportGreeting>:[<robotName>][<today>]<sport>[<sportSuffix>][<robotName>];
+<today>:今天;
+<sport>:游泳|打球|看电影;
+<sportSuffix>:了|了吗|吗|去|要去;
+
+<weatherGreeting>:[<robotName>][<today>]<weather>[<how>][<robotName>];
+<weather>:天气;
+<how>:好吗|怎么|怎么样|如何;

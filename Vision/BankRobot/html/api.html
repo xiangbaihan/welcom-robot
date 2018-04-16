@@ -1,0 +1,224 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<h1 style="color: #4485b8;">Bank Robot Service API Document</h1>
+<hr />
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-9hbo{font-weight:bold;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-6k2t{background-color:#D2E4FC;vertical-align:top}
+</style>
+
+<h2 style="color: #4485b8;">HTTP Server API</h2>
+<table class="tg">
+  <tr>
+    <th class="tg-9hbo">Path</th>
+    <th class="tg-9hbo">HTTP Method<br></th>
+    <th class="tg-9hbo">Request</th>
+    <th class="tg-9hbo">Response</th>
+    <th class="tg-9hbo">Description</th>
+  </tr>
+  <tr>
+    <td class="tg-6k2t">/</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/HTML</i><br></td>
+    <td class="tg-6k2t">根目录。 此API描述文档。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-6k2t">/battery</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t">{<br>  "percent" : Integer,<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-6k2t">获取当前电量信息。<br>如果电池模块正常，percent值为0~100。否则，percent值为-1。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-6k2t">/control</td>
+    <td class="tg-6k2t">POST</td>
+    <td class="tg-6k2t">{<br>  "state" : Boolean<br>}</td>
+    <td class="tg-6k2t">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-6k2t">开启、关闭所有功能模块。<br></td>
+  </tr>
+  
+  <tr>
+    <td class="tg-6k2t">/dance</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">舞蹈模块根目录。<br></td>
+  </tr>
+   <tr>
+    <td class="tg-yw4l">/dance/control</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "type" : Integer,<br>  "repeat" : Integer,<br>  "duration" : Long,<br>  "muteFlag" : Boolean,<br>  }</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">控制舞蹈模块：<br> type:舞蹈类型:选择1(时长20秒),2(时长40秒),3(时长60秒)
+    			<br>repeat:舞蹈重复次数<br>duration:舞蹈时长(单位是毫秒) <br> muteFlag:静音标志(true为静音)
+    
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/dance/danceFlag</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "state" : Boolean<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">开始、暂停跳舞模块。<br> true为开始/继续，false为暂停</td>
+  </tr>
+   <tr>
+    <td class="tg-yw4l">/dance/musicFlag</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "state" : Boolean<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">控制歌曲播放，用于静音操作<br> false为静音。</td>
+  </tr>
+
+  <tr>
+    <td class="tg-6k2t">/expression</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">表情控制模块根目录。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/expression/dynamicExpresssion</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "emotion" : Integer,<br>  "emotionDuration" : Long,<br>  "emotionRepeat" : Integer<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">设置动态表情。<br>emotion: 1-吃惊，2-大笑，3-道别，4-害羞，5-微笑，6-汗，7-疑问，8-赞，9-无表情<br>emotionDuration单位是毫秒,并且大于1000ms</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/expression/staticExpresssion</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "emotion" : Integer,<br>  "emotionDuration" : Long,<br>  "emotionRepeat" : Integer<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">设置静态表情。<br>emotion: 1-吃惊，2-大笑，3-道别，4-害羞，5-微笑，6-汗，7-疑问，8-赞，9-无表情<br>emotionDuration值忽略 <br>emotionRepeat值忽略<br></td>
+  </tr>
+
+  <tr>
+    <td class="tg-6k2t">/health</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t">{<br>[<br>"moduleName" : String,<br> "isHealthy" : Boolean,<br> "errorMessage" : String<br>]<br>}</td>
+    <td class="tg-6k2t">显示各个功能模块健康状态和错误信息。<br></td>
+  </tr>
+  
+  <tr>
+    <td class="tg-6k2t">/led</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">LED灯控制模块根目录。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/led/control</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "ledState" : Integer,<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">控制LED灯状态。<br>ledState: 1-亮暗循环变化，2-慢速从暗到亮（5秒），3-快速从暗到亮（2.5秒），4-慢速从亮到暗（5秒），5-快速从亮到暗（2.5秒），6-常亮，7-中度亮，8-低度亮，9-常灭<br>
+                        <br>注：由于底层硬件限制，LED灯控制和地盘运动控制存在冲突。所以当机器人运动时，LED灯动态效果会暂定（仍然可以接受LED控制指令），到运动时间结束后才会继续。</td>
+  </tr>
+  
+  <tr>
+    <td class="tg-6k2t">/motion</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">运动控制模块根目录。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/motion/arm</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "armPart" : Integer,<br>  "armPosition" : Integer,<br>  "armSpeed" : Integer<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">控制手臂运动。<br>armPar: 1-左手臂，2-右手臂，<=0或>=3-两只手臂 <br>armPosition值范围是0～360 <br>armSpeed值范围是1～10<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/motion/chasis</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "motionLineSpeed" : Integer,<br>  "motionAngularSpeed" : Integer,<br>  "motionDuration" : Long<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">控制底部轮子运动。<br>motionLineSpeed值范围是-10～10 <br>motionAngularSpeed值范围是-180～180 <br>motionDuration单位是毫秒<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/motion/resetCoordinate</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "reset" : Boolean<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">重置当前机器人位置和角度为初始值0。<br>此为内部API，调试使用。<br></td>
+  </tr>
+
+  <tr>
+    <td class="tg-6k2t">/speaker</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">语音合成模块根目录。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/speaker/control</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "state" : Boolean<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">开启、关闭语音合成模块。此接口可用于停止当前语音播放。</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/speaker/talk</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "content" : String,<br>  "speed" : Integer,<br>  "volume" : Integer,<br>  "pitch" : Integer,<br>  "repeat" : Integer<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">语音合成并播放。<br>speed值范围是0～100 <br>volume值范围是0～100 <br>pitch值范围是0～100<br></td>
+  </tr>
+
+  <tr>
+    <td class="tg-6k2t">/speech</td>
+    <td class="tg-6k2t">GET</td>
+    <td class="tg-6k2t">NA</td>
+    <td class="tg-6k2t"><i>text/plain</i><br></td>
+    <td class="tg-6k2t">语音识别模块根目录。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/speech/control</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">{<br>  "state" : Boolean<br>}</td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">开启、关闭语音识别模块。</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/speech/upload</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l"><p><i>multipart/form-data</i></p> <p>(HTTP entity)<br> "file" : String</p></td>
+    <td class="tg-yw4l">{<br>  "errorCode" : Integer,<br>  "errorMessage" : String,<br> "okay" : Boolean<br>}</td>
+    <td class="tg-yw4l">上传迅飞BNF语法文件并重新启动语音识别模块。</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<h2 style="color: #4485b8;">Socket Notification</h2>
+<table class="tg">
+  <tr>
+    <th class="tg-9hbo">Module</th>
+    <th class="tg-9hbo">Format<br></th>
+    <th class="tg-9hbo">Description</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">人物检测</td>
+    <td class="tg-yw4l">{<br>  "state" : Integer,<br>  "number" : Integer,<br> "timestamp" : Long<br>}</td>
+    <td class="tg-yw4l">检测到人物状态改变后，人物检测模块发送此消息。<br>state: 0-没有人（默认状态），1-人走近，2-人在面前，3-人走远<br>timestamp: Unix时间，单位是毫秒</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">语音识别</td>
+    <td class="tg-yw4l">{<br>  "fullText" : String,<br>  "keywords" : <br>[<br> "slot": String,<br> "word": String,<br>]<br> "isRecognized": Boolean,<br> "timestamp" : Long<br>}</td>
+    <td class="tg-yw4l">检测到语音输入后，语音识别模块发送此消息。
+                        <br>fullText:识别到的完整句子<br>slot:语法文件中预定义的语法槽<br>word:识别到的对应语法槽的关键词<br>isRecognized:如果无法识别，此值为false<br>timestamp: Unix时间，单位是毫秒
+                        <br><br>注1：语音识别需要2秒左右的停顿时间判断当前说话已经结束——此显示为识别结果延迟。
+                        <br>注2：当前只支持最多10秒钟的语音输入（此限制可调）。<br>
+    </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<hr />
+<p><em>&copy; 2017 宁波美健机器人有限公司<br /></em></p>

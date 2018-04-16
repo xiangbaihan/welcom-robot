@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.nb.robot.bankapplication.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="68dp"
+            android:text="欢迎使用银行机器人"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonBankServices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonEntertainments"
+            android:layout_alignBottom="@+id/buttonEntertainments"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="59dp"
+            android:text="银行业务" />
+
+        <Button
+            android:id="@+id/buttonEntertainments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="72dp"
+            android:text="娱乐模式" />
+    </RelativeLayout>
+</FrameLayout>
